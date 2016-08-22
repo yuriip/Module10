@@ -3,15 +3,13 @@ package ua.goit.java.util;
 import java.io.*;
 import java.nio.charset.Charset;
 
-public class UtilReadWrite {
+public class TextFileProcessor {
     public void saveText(String filePath, String text) {
         try (BufferedWriter bufferedWriter =
                      new BufferedWriter(
                              new OutputStreamWriter(
                                      new FileOutputStream(filePath), Charset.forName("UTF-8") ))){
             bufferedWriter.write(text);
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -36,7 +34,7 @@ public class UtilReadWrite {
             System.out.println(e.getMessage());
         }
 
-        return new String(stringBuilder);
+        return stringBuilder.toString();
     }
 }
 
