@@ -13,8 +13,16 @@ public class Main {
 
         String filePath = "d:/message.txt";
 
-        utilReadWrite.saveText(filePath, encriptDecript.encrypt(message));
+        try {
+            utilReadWrite.saveText(filePath, encriptDecript.encrypt(message));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
 
-        System.out.println(encriptDecript.decrypt(utilReadWrite.readText(filePath)));
+        try {
+            System.out.println(encriptDecript.decrypt(utilReadWrite.readText(filePath)));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

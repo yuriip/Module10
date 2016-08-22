@@ -11,9 +11,9 @@ public class UtilReadWrite {
                                      new FileOutputStream(filePath), Charset.forName("UTF-8") ))){
             bufferedWriter.write(text);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -31,9 +31,9 @@ public class UtilReadWrite {
                 stringBuilder.append(str);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         return new String(stringBuilder);
