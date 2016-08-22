@@ -28,8 +28,6 @@ public class TextFileProcessor {
             while ((str = bufferedReader.readLine()) != null) {
                 stringBuilder.append(str);
             }
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
